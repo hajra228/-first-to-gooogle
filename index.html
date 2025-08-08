@@ -1,176 +1,300 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Cybersecurity - Feloxo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(120deg, #1479FF 0%, #23D97A 100%);
-            font-family: 'Segoe UI', 'Arial', sans-serif;
-            color: #fff;
-        }
-        .header {
-            padding: 60px 0 30px 0;
-            text-align: center;
-            background: rgba(0,0,0,0.2);
-        }
-        .header h1 {
-            font-size: 3.5em;
-            margin: 0;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-shadow: 2px 4px 16px #1118;
-        }
-        .header p {
-            font-size: 1.5em;
-            margin-top: 18px;
-            font-weight: 400;
-        }
-        .main {
-            max-width: 900px;
-            margin: 40px auto 60px auto;
-            background: rgba(255,255,255, 0.08);
-            border-radius: 30px;
-            box-shadow: 0 8px 48px rgba(0,0,0,0.18);
-            padding: 50px 40px;
-        }
-        h2 {
-            color: #fff;
-            font-size: 2em;
-            margin-top: 40px;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-        ul {
-            font-size: 1.15em;
-            margin-left: 30px;
-            margin-bottom: 35px;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .quote {
-            padding: 20px 30px;
-            background: rgba(20,121,255,0.18);
-            border-left: 6px solid #23D97A;
-            font-size: 1.3em;
-            font-style: italic;
-            margin: 40px 0;
-        }
-        .cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 28px;
-            margin-top: 40px;
-            justify-content: center;
-        }
-        .card {
-            background: rgba(255,255,255,0.13);
-            box-shadow: 0 4px 24px rgba(20,121,255,0.09);
-            border-radius: 16px;
-            padding: 28px 24px;
-            flex: 1;
-            min-width: 220px;
-            max-width: 320px;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .card h3 {
-            font-size: 1.35em;
-            margin-bottom: 14px;
-            color: #23D97A;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-        .footer {
-            text-align: center;
-            padding: 40px 0 30px 0;
-            font-size: 1.02em;
-            color: #ddf;
-            background: rgba(0,0,0,0.12);
-        }
-        @media (max-width: 700px) {
-            .main { padding: 24px 6vw; }
-            .header h1 { font-size: 2.2em; }
-            .header p { font-size: 1.1em; }
-            .cards { flex-direction: column; gap: 20px; }
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>What Is a Hacker? — Ethical Hacking & Cybersecurity</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#071025;
+    --card: rgba(255,255,255,0.03);
+    --muted: rgba(255,255,255,0.7);
+    --accent1: linear-gradient(90deg,#ff7aa2,#ffcf6b);
+    --accent2: linear-gradient(90deg,#7afcff,#b98bff);
+    --glass: rgba(255,255,255,0.04);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;color:#e9f7ff;background:radial-gradient(1200px 400px at 10% 10%, rgba(122,255,255,0.03), transparent), radial-gradient(900px 300px at 90% 90%, rgba(185,139,255,0.03), transparent), var(--bg);min-height:100vh}
+  header{padding:36px 48px;display:flex;align-items:center;gap:18px}
+  .logo{width:72px;height:72px;border-radius:18px;background:conic-gradient(from 120deg,#ff4d4d,#ffb84d,#fff14d,#6bff7a,#4dd6ff,#8a7bff,#ff6fd6);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 40px rgba(2,8,20,0.6);font-weight:800;color:#031018}
+  h1{margin:0;font-size:28px}
+  p.lead{margin:6px 0 0;color:var(--muted);max-width:900px}
+  .wrap{display:grid;grid-template-columns:360px 1fr;gap:24px;padding:18px 48px 48px}
+  .sidebar{background:var(--card);border-radius:var(--radius);padding:18px;backdrop-filter: blur(6px);box-shadow: 0 8px 30px rgba(2,6,23,0.6)}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;margin-bottom:14px;border:1px solid rgba(255,255,255,0.02)}
+  .section{padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+  .tagline{display:flex;flex-direction:column;gap:6px}
+  .muted{color:var(--muted);font-size:13px}
+  nav a{display:block;padding:10px;border-radius:8px;color:#e9f7ff;text-decoration:none;margin-bottom:6px}
+  nav a:hover{background:rgba(255,255,255,0.02)}
+  .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:18px}
+  .big-cta{padding:18px;border-radius:12px;background:linear-gradient(90deg, rgba(122,252,255,0.06), rgba(185,139,255,0.05));border:1px solid rgba(255,255,255,0.02)}
+  .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--accent2);color:#021212;font-weight:700}
+  .cols{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+  .pill{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:600}
+  h2{margin:0 0 8px 0}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  ul.resources{list-style:none;padding:0;margin:0}
+  ul.resources li{padding:10px;border-radius:8px;margin-bottom:8px;background:rgba(255,255,255,0.01);display:flex;justify-content:space-between;align-items:center}
+  .btn{padding:8px 12px;border-radius:10px;border:none;background:var(--accent1);color:#041018;font-weight:700;cursor:pointer}
+  .ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:8px 10px;border-radius:8px}
+  .content h3{margin-top:18px}
+  pre{background:rgba(0,0,0,0.35);padding:12px;border-radius:8px;overflow:auto}
+  footer{padding:24px 48px;color:var(--muted);font-size:13px}
+  .resource-links a{color:#bfefff;text-decoration:none}
+  .warning{background:linear-gradient(90deg,#ffd6d6,#fff1c2);color:#031018;padding:12px;border-radius:10px;margin-top:10px;font-weight:700}
+  @media(max-width:1000px){.wrap{grid-template-columns:1fr;padding:18px}.hero-grid{grid-template-columns:1fr}.logo{width:54px;height:54px}}
+</style>
 </head>
 <body>
-    <div class="header">
-        <h1>Cybersecurity</h1>
-        <p>Protecting Digital Life in the Modern World</p>
+
+<header>
+  <div class="logo">CF</div>
+  <div>
+    <h1>What Is a Hacker? — Learn Ethically</h1>
+    <p class="lead muted">A large educational guide about hackers, types of hacking, ethical learning paths, careers, defensive skills, and legal practice. This site will <strong>not</strong> teach or link to illegal tools.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <aside class="sidebar">
+    <div class="card">
+      <strong>Quick nav</strong>
+      <nav style="margin-top:10px">
+        <a href="#what">What is a hacker?</a>
+        <a href="#types">Types of hackers</a>
+        <a href="#learn">How to learn (ethically)</a>
+        <a href="#ctf">CTFs & labs</a>
+        <a href="#careers">Careers</a>
+        <a href="#resources">Trusted resources</a>
+      </nav>
     </div>
-    <div class="main">
-        <div class="quote">
-            "Cybersecurity is not just a technology issue—it's a people, process, and awareness issue."
+
+    <div class="card">
+      <strong>Safety & law</strong>
+      <p class="muted">Hacking without permission is illegal. Always practice on your own systems, authorized testbeds, or platforms designed for learning. Below are lawful paths and organizations.</p>
+      <div style="margin-top:10px"><span class="pill">Ethical</span> <span class="pill">Legal</span> <span class="pill">Responsible</span></div>
+    </div>
+
+    <div class="card">
+      <strong>Local memory</strong>
+      <p class="muted">This demo is static. If you host it, you can add local notes or link to your resources.</p>
+    </div>
+
+    <div class="card">
+      <strong>Design note</strong>
+      <p class="muted">Beautiful, large, responsive layout. Use this as a template for educational pages about cybersecurity.</p>
+    </div>
+  </aside>
+
+  <main>
+    <section id="what" class="section hero-grid">
+      <div class="big-cta">
+        <div class="badge">Learn Ethically</div>
+        <h2>What is a hacker?</h2>
+        <p class="muted">A hacker is someone who explores technologies creatively. Historically the word has covered tinkerers, software explorers, security researchers, and people who break systems. Today we distinguish by intent and legality:</p>
+        <div class="cols">
+          <div class="pill">Curious</div>
+          <div class="pill">Problem-solver</div>
+          <div class="pill">Security-minded</div>
         </div>
-        <h2>What is Cybersecurity?</h2>
-        <p>
-            Cybersecurity is the practice of defending computers, servers, mobile devices, electronic systems, networks, and data from malicious attacks. 
-            It’s a critical field in today’s world, where almost everything is connected and online.
-        </p>
-        <h2>Why is Cybersecurity Important?</h2>
-        <ul>
-            <li>Protects personal and business data from theft and loss.</li>
-            <li>Prevents financial damage and fraud.</li>
-            <li>Ensures privacy and digital safety for individuals.</li>
-            <li>Keeps organizations running smoothly by preventing disruptions.</li>
+
+        <h3 style="margin-top:14px">Short definition</h3>
+        <p class="muted">A hacker is a person who applies deep technical skill to understand, modify, or break systems. That can be used for good (security research, improving defenses) or for harm (illegal intrusion).</p>
+      </div>
+
+      <aside style="padding:18px;background:var(--card);border-radius:12px">
+        <strong>Quick facts</strong>
+        <ul style="margin-top:10px;color:var(--muted)">
+          <li>Hacking ≠ Crime (intent matters)</li>
+          <li>Ethical hacking is often called "white hat"</li>
+          <li>Practice legally via CTFs & labs</li>
         </ul>
-        <div class="cards">
-            <div class="card">
-                <h3>Common Threats</h3>
-                <ul>
-                    <li>Viruses & Malware</li>
-                    <li>Phishing</li>
-                    <li>Ransomware</li>
-                    <li>Data Breaches</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Protect Yourself</h3>
-                <ul>
-                    <li>Use strong, unique passwords</li>
-                    <li>Enable Two-Factor Authentication</li>
-                    <li>Update software regularly</li>
-                    <li>Be careful with links & attachments</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>For Businesses</h3>
-                <ul>
-                    <li>Train employees in cyber safety</li>
-                    <li>Back up data often</li>
-                    <li>Use firewalls & security software</li>
-                    <li>Plan for incident response</li>
-                </ul>
-            </div>
+      </aside>
+    </section>
+
+    <section id="types" class="section content" style="margin-top:18px">
+      <h2>Types of hackers (by intent)</h2>
+      <div class="grid-2" style="margin-top:12px">
+        <div>
+          <h3>White Hat</h3>
+          <p class="muted">Security professionals who test systems with permission to find and fix vulnerabilities.</p>
+
+          <h3 style="margin-top:12px">Grey Hat</h3>
+          <p class="muted">May explore vulnerabilities without clear permission; sometimes disclose responsibly, sometimes not. Risky legally.</p>
+
+          <h3 style="margin-top:12px">Black Hat</h3>
+          <p class="muted">Individuals who break systems or exploit vulnerabilities for personal gain or harm. Illegal and unethical.</p>
         </div>
-        <h2>Did You Know?</h2>
-        <ul>
-            <li>Every 39 seconds, a new cyberattack occurs somewhere in the world.</li>
-            <li>Weak passwords are responsible for over 80% of data breaches.</li>
-            <li>Cybersecurity jobs are in high demand and continue to grow.</li>
-        </ul>
-    </div>
-    <div class="footer">
-        &copy; 2025 | Stay Safe. Stay Secure.<br>
-        Designed by hajra228
-    </div>
+
+        <div>
+          <h3>Hacktivist</h3>
+          <p class="muted">Use hacking to advance political or social causes — can cross legal lines.</p>
+
+          <h3 style="margin-top:12px">Script Kiddie</h3>
+          <p class="muted">Inexperienced users who use pre-built tools without deep understanding — often harmful.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="learn" class="section" style="margin-top:18px">
+      <h2>How to learn (the ethical path)</h2>
+      <p class="muted">If you want to learn cybersecurity and "hacking" without breaking the law, follow a safe roadmap:</p>
+      <ol style="margin-top:12px;color:var(--muted)">
+        <li><strong>Basics:</strong> Learn operating systems (Linux), networking (TCP/IP), and programming (Python).</li>
+        <li><strong>Security fundamentals:</strong> Understand web security (HTTP, cookies), cryptography basics, and system hardening.</li>
+        <li><strong>Hands-on labs:</strong> Use legal CTF platforms and intentionally vulnerable VMs.</li>
+        <li><strong>Responsible disclosure:</strong> If you find vulnerabilities, follow coordinated disclosure policies (report to vendor or CERT).</li>
+        <li><strong>Certifications:</strong> Consider CEH, OSCP, CompTIA Security+, or vendor trainings for professional development.</li>
+      </ol>
+
+      <div class="warning" style="margin-top:14px">
+        I will not provide instructions for illegal intrusion, nor links to tools intended to break into systems. Use your skills for defense, research, and learning on authorized platforms only.
+      </div>
+    </section>
+
+    <section id="ctf" class="section" style="margin-top:18px">
+      <h2>CTFs, Practice Labs & Safe Playgrounds</h2>
+      <p class="muted">Capture-The-Flag (CTF) competitions and lab platforms let you practice legally. Popular and lawful platforms include:</p>
+      <ul class="resources" style="margin-top:12px">
+        <li>
+          <span>TryHackMe — guided, beginner-friendly labs</span>
+          <a class="ghost" href="https://tryhackme.com" target="_blank" rel="noopener noreferrer">Visit</a>
+        </li>
+        <li>
+          <span>Hack The Box — realistic machines & CTFs</span>
+          <a class="ghost" href="https://www.hackthebox.com" target="_blank" rel="noopener noreferrer">Visit</a>
+        </li>
+        <li>
+          <span>OverTheWire — classic wargames</span>
+          <a class="ghost" href="https://overthewire.org" target="_blank" rel="noopener noreferrer">Visit</a>
+        </li>
+        <li>
+          <span>VulnHub — vulnerable VMs to download</span>
+          <a class="ghost" href="https://www.vulnhub.com" target="_blank" rel="noopener noreferrer">Visit</a>
+        </li>
+      </ul>
+
+      <p class="muted" style="margin-top:10px">These are educational — use them. Always get explicit permission before testing any system you do not own.</p>
+    </section>
+
+    <section id="careers" class="section" style="margin-top:18px">
+      <h2>Careers and how to break in</h2>
+      <div class="grid-2" style="margin-top:12px">
+        <div>
+          <h3>Roles</h3>
+          <ul style="color:var(--muted)">
+            <li>Penetration Tester</li>
+            <li>Security Engineer</li>
+            <li>Red Team Specialist</li>
+            <li>Blue Team / Incident Responder</li>
+            <li>Security Researcher</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Steps to get started</h3>
+          <ol style="color:var(--muted)">
+            <li>Build a portfolio: write-ups, CTF solves, GitHub projects.</li>
+            <li>Gain certifications: OSCP, CEH, Security+.</li>
+            <li>Join local security groups, attend conferences.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources" class="section" style="margin-top:18px">
+      <h2>Trusted resources & organizations</h2>
+      <p class="muted">Legal, high-quality references for learning and defense:</p>
+      <ul class="resources" style="margin-top:12px">
+        <li><span>OWASP — web application security projects</span><a class="ghost" href="https://owasp.org" target="_blank" rel="noopener noreferrer">OWASP</a></li>
+        <li><span>NIST — cybersecurity frameworks & guides</span><a class="ghost" href="https://www.nist.gov" target="_blank" rel="noopener noreferrer">NIST</a></li>
+        <li><span>CISA — US Cybersecurity & Infrastructure Security Agency</span><a class="ghost" href="https://www.cisa.gov" target="_blank" rel="noopener noreferrer">CISA</a></li>
+        <li><span>SANS — training and research</span><a class="ghost" href="https://www.sans.org" target="_blank" rel="noopener noreferrer">SANS</a></li>
+        <li><span>MDN Web Docs — web fundamentals</span><a class="ghost" href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">MDN</a></li>
+      </ul>
+
+      <h3 style="margin-top:12px">Books & reading</h3>
+      <ul style="color:var(--muted);margin-top:8px">
+        <li>“The Web Application Hacker's Handbook” — web security (use for defense)</li>
+        <li>“Hacking: The Art of Exploitation” — low-level concepts (study responsibly)</li>
+        <li>Security blogs, vendor advisories, and RFCs</li>
+      </ul>
+    </section>
+
+    <section class="section" style="margin-top:18px">
+      <h2>Get started — free learning plan (30 days)</h2>
+      <ol style="color:var(--muted)">
+        <li><strong>Days 1–7:</strong> Linux basics, shell, networking fundamentals</li>
+        <li><strong>Days 8–14:</strong> Python scripting, HTTP basics, browsers & devtools</li>
+        <li><strong>Days 15–21:</strong> Web security fundamentals (XSS, SQLi), OWASP Top 10</li>
+        <li><strong>Days 22–30:</strong> Join TryHackMe & solve beginner rooms; write 2-3 writeups</li>
+      </ol>
+      <p class="muted" style="margin-top:8px">This plan focuses on building defensive knowledge and responsible testing skills.</p>
+    </section>
+
+    <section class="section" style="margin-top:18px">
+      <h2>Interactive demo (no illegal content)</h2>
+      <p class="muted">Below is a simple interactive "quiz" to test your knowledge. It's safe — no hacking instructions.</p>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <button class="btn" onclick="startQuiz()">Start Quiz</button>
+        <button class="ghost" onclick="showDisclaimer()">Why no hacking instructions?</button>
+      </div>
+      <div id="quizArea" style="margin-top:12px"></div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  This educational site is designed for lawful learning. If you want, I can help convert this into a multi-page site, add signup, or scaffold a backend for CTF tracking. I will NOT assist with creating or linking to tools for illegal hacking.
+</footer>
+
+<script>
+  function startQuiz(){
+    const q = [
+      {q:"Is it legal to scan someone else's network without permission? (Yes/No)", a:"No"},
+      {q:"Name one ethical CTF platform.", a:"TryHackMe"},
+      {q:"What does OWASP focus on?", a:"Web application security"}
+    ];
+    let idx = 0;
+    const area = document.getElementById('quizArea');
+    area.innerHTML = '';
+    function render(){
+      if(idx>=q.length){ area.innerHTML = '<div style="color:#bfefff">Quiz complete — great job! Explore the resources above.</div>'; return; }
+      area.innerHTML = `<div style="padding:12px;background:rgba(255,255,255,0.02);border-radius:10px">
+        <div style="font-weight:700">${q[idx].q}</div>
+        <input id="ans" style="margin-top:8px;padding:8px;border-radius:8px;width:60%" placeholder="Your answer" />
+        <div style="margin-top:8px">
+          <button class="btn" onclick="check()">Check</button>
+          <button class="ghost" onclick="skip()">Skip</button>
+        </div>
+        <div id="feedback" style="margin-top:8px;color:#ffdede"></div>
+      </div>`;
+      document.getElementById('ans').focus();
+    }
+    window.check = function(){
+      const val = document.getElementById('ans').value.trim();
+      const feedback = document.getElementById('feedback');
+      if(!val){ feedback.innerText='Type something'; return; }
+      if(val.toLowerCase() === q[idx].a.toLowerCase()){
+        feedback.style.color = '#bfffdc';
+        feedback.innerText = 'Correct!';
+      } else {
+        feedback.style.color = '#ffdede';
+        feedback.innerText = 'Not quite. The expected answer: ' + q[idx].a;
+      }
+      idx++;
+      setTimeout(render,900);
+    }
+    window.skip = function(){ idx++; render(); }
+    render();
+  }
+
+  function showDisclaimer(){
+    alert("I won't include instructions or links that enable illegal hacking. Use the resources and CTFs listed to learn legally.");
+  }
+</script>
 </body>
 </html>
-
-
-
-
- 
-  
-
-
-   
- 
